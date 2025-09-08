@@ -88,13 +88,13 @@ function removeFromLocalStore(taskContent){
 const themeToggleButton = document.getElementById("Toggle-theme-btn");
 const currentTheme = localStorage.getItem("theme");
 themeToggleButton.addEventListener("click", () =>{
-  document.body.classList.toggle("dark-theme");
+  document.body.classList.toggle("light-theme");
 
-  const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+  const theme = document.body.classList.contains("light-theme") ? "light" : "dark";
 
   localStorage.setItem("theme", theme);
 })
-
-if (currentTheme === "dark") {
-  document.body.classList.add("dark-theme");
+t
+if (currentTheme === "light") {
+  document.body.classList.add("light-theme");
 }
