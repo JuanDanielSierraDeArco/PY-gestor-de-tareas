@@ -1,192 +1,224 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-image: radial-gradient(circle, #280537, #210737, #1a0937, #120a37, #090b36);
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    min-height: 100dvh;
-    font-size: 62.5%;
-    transition: background 0.5s ease, color 0.5s ease;
+  font-family: Arial, sans-serif;
+  background-image: radial-gradient(circle, #280537, #210737, #1a0937, #120a37, #090b36);
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  min-height: 100dvh;
+  font-size: 62.5%;
+  color: white;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
+/* ===== BOTÓN DE TEMA ===== */
 #theme-toggle {
-    width: 100%;
-    margin: 30px 0 30px 30px;
+  width: 100%;
+  margin: 30px 0 30px 30px;
 }
 
-#theme-toggle button{
-    box-shadow: 12px 2px 60px rgba(0, 0, 0, 0.1);
+#theme-toggle button {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
+#theme-toggle button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
 #task-manager {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    -webkit-backdrop-filter: blur(5px);
-    border: none;
-    padding: 20px 20px 5px 20px;
-    margin: auto;
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px 20px 5px 20px;
+  margin: auto;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  transition: background 0.5s ease;
 }
 
+/* ===== TITULO ===== */
 h1 {
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* ===== FORMULARIO ===== */
 #task-form {
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #task-input {
-    padding: 10px;
-    width: 70%;
-    margin-right: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.2);
-}
-#task-list {
-    list-style-type: none;
-    padding: 0;
+  padding: 10px;
+  width: 70%;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
+#task-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== BOTONES ===== */
 button {
-    background-color: #280537;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: white;
-    box-shadow: 0 5px 30px white;
-    cursor: pointer;
+  background-color: #6c1eb4;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  box-shadow: 0 5px 20px rgba(108, 30, 180, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-    transform: translateY(-2px);
+  background-color: #8a3ed9;
+  transform: translateY(-2px);
 }
+
+/* ===== LISTA DE TAREAS ===== */
 #task-list {
-    list-style: none;
-    padding: 0;
-    border-top: 3px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    width: 100%;
-    height: auto;
+  list-style: none;
+  padding: 0;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  width: 100%;
+  height: auto;
 }
 
 #task-list li {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    margin-bottom: 10px;
-
-    display: grid;
-    grid-template-columns: 2fr 100px 100px;
-    gap: 10px;
-    align-items: center;
-    padding-left: 25px;
-    padding-right: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 2fr 80px 80px;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 20px;
+  transition: transform 0.2s ease;
 }
 
-.delete-btn, .edit-btn{
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    padding: 8px 10px;
-    cursor: pointer;
+#task-list li:hover {
+  transform: scale(1.02);
 }
 
-.edit-btn:hover{
-    transform: translateY(4px);
-    background: rgba(163, 113, 113, 0.178);
-    border-radius: 15px;
-}
-.delete-btn:hover{
-    transform: translateY(3px);
-    background: rgba(163, 113, 113, 0.178);
-    border-radius: 15px;
+#task-list li p {
+  margin: 0;
 }
 
+/* ===== BOTONES DE ACCIONES ===== */
+.delete-btn, .edit-btn {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.delete-btn {
+  background: rgba(255, 0, 0, 0.6);
+}
+
+.edit-btn {
+  background: rgba(0, 200, 0, 0.6);
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+.edit-btn:hover {
+  background: rgba(0, 200, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ===== MODO CLARO ===== */
 body.light-theme {
-    background-image: radial-gradient(circle, #daa1f2, #cfadef, #c7b7e9, #c5c0e0, #c7c7d4);
-    color: #fff;
-}
-.light #task-manager {
-    background-image: radial-gradient(circle, #daa1f2, #cfadef, #c7b7e9, #c5c0e0, #c7c7d4);
-    color: #fff;
-}
-.light-theme #task-list li  {
-    background-image: linear-gradient(circle, #daa1f2, #cfadef, #c7b7e9, #c5c0e0, #c7c7d4);
-    font-weight: bold;
-
+  background-image: radial-gradient(circle, #f8f6ff, #e4e1fa, #d1cbf2, #c0b6ea, #b2a1e1);
+  color: #333;
 }
 
-.light-theme button {
-  background: #c7b7e9;
+body.light-theme #task-manager {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme #task-input {
+  background: rgba(200, 200, 200, 0.3);
   color: #000;
 }
 
-@media screen and (max-width: 600px){
-    body{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+body.light-theme button {
+  background: #8a6be6;
+  color: #fff;
 }
 
-@media screen and (max-width: 600px){
-    body {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+body.light-theme #task-list li {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
 }
 
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 480px) {
-    body {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+  body {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-    #task-list li {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-          "li li"
-          "delete edit";
-        width: 90%;
-        height: auto;
-        padding-bottom: 10px;
-    }
+  #task-list li {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "li li"
+      "delete edit";
+    padding: 15px;
+  }
 
-    #task-list li p {
-        grid-area: li;
-    }
+  #task-list li p {
+    grid-area: li;
+  }
 
-    #task-list li .delete-btn {
-        grid-area: delete;
-        width: auto;
-    }
+  #task-list li .delete-btn {
+    grid-area: delete;
+  }
 
-    #task-list li .edit-btn {
-        grid-area: edit;
-        width: auto;
-    }
+  #task-list li .edit-btn {
+    grid-area: edit;
+  }
 }
