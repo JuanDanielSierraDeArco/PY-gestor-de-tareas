@@ -6,6 +6,7 @@ body {
     width: 100vw;
     min-height: 100dvh;
     font-size: 62.5%;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 #theme-toggle {
@@ -106,7 +107,7 @@ button:hover {
     padding-right: 20px;
 }
 
-.delete-btn, edit-btn{
+.delete-btn, .edit-btn{
     text-align: center;
     color: white;
     font-weight: bold;
@@ -116,9 +117,13 @@ button:hover {
 
 .edit-btn:hover{
     transform: translateY(4px);
+    background: rgba(163, 113, 113, 0.178);
+    border-radius: 15px;
 }
 .delete-btn:hover{
     transform: translateY(3px);
+    background: rgba(163, 113, 113, 0.178);
+    border-radius: 15px;
 }
 
 body.light-theme {
@@ -132,10 +137,56 @@ body.light-theme {
 .light-theme #task-list li  {
     background-image: linear-gradient(circle, #daa1f2, #cfadef, #c7b7e9, #c5c0e0, #c7c7d4);
     font-weight: bold;
+
 }
 
 .light-theme button {
   background: #c7b7e9;
-  color: #000; /* para que el texto se lea */
+  color: #000;
 }
-background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, 
+
+@media screen and (max-width: 600px){
+    body{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    body {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #task-list li {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+          "li li"
+          "delete edit";
+        width: 90%;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    #task-list li p {
+        grid-area: li;
+    }
+
+    #task-list li .delete-btn {
+        grid-area: delete;
+        width: auto;
+    }
+
+    #task-list li .edit-btn {
+        grid-area: edit;
+        width: auto;
+    }
+}

@@ -20,8 +20,9 @@ taskForm.addEventListener("submit", (event) =>{
 
 function createTaskElement(task) {
   const li = document.createElement("li");
-  li.textContent = task;
-  li.append(
+  const p = document.createElement("p");
+  p.textContent = task;
+  li.append(p,
     createButton("❌", 'delete-btn'),
     createButton("✏️", "edit-btn"));
   return li;
@@ -79,7 +80,7 @@ function updateLocalStore(){
 }
 
 function removeFromLocalStore(taskContent){
-  const tasks = JSON.parse(localStorage.getItem("tasks" || "[]"));
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
   const UpdateTasks = tasks.filter((task) => task !== taskContent);
 
   localStorage.setItem("tasks", JSON.stringify(UpdateTasks));
@@ -94,7 +95,6 @@ themeToggleButton.addEventListener("click", () =>{
 
   localStorage.setItem("theme", theme);
 })
-t
 if (currentTheme === "light") {
   document.body.classList.add("light-theme");
 }
